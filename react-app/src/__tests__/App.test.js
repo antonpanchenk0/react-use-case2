@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import App from '../App';
 import {useDispatch} from 'react-redux';
 
 jest.mock('./components/Form', () => () => <div>Form</div>);

@@ -2,8 +2,8 @@ import React from 'react';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';  // for the "toBeInTheDocument" matcher
 import { useDispatch } from 'react-redux';
-import Form from './Form';
-import * as constants from '../../redux/constants';  // adjust the import to your file structure
+import Form from '../Form';
+import * as constants from '../../../redux/constants';  // adjust the import to your file structure
 
 // Mocking the useDispatch hook from react-redux
 jest.mock('react-redux', () => ({
