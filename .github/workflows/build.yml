@@ -21,9 +21,11 @@ jobs:
         node-version: '18'
 
     - name: Install dependencies
+      working-directory: ./react-app
       run: npm install
 
     - name: Test with Jest and generate coverage
+      working-directory: ./react-app
       run: npm run test -- --coverage
 
     - name: SonarCloud Scan
