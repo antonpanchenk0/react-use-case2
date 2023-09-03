@@ -1,0 +1,96 @@
+Create the html table using reactjs with the next columns:
+- first name
+- last name
+- email
+- message
+
+ChatGPT
+Certainly! Below is an example of how you could create an HTML table in ReactJS with the specified columns:
+
+First, install React and create a new React app if you haven't done so:
+
+bash
+Copy code
+npx create-react-app my-table-app
+Navigate to your app's directory:
+
+bash
+Copy code
+cd my-table-app
+Now replace the content of src/App.js with the following code:
+
+jsx
+Copy code
+import React from 'react';
+import './App.css';
+
+function App() {
+  // Sample data
+  const data = [
+    { firstName: "John", lastName: "Doe", email: "john.doe@example.com", message: "Hello, world!" },
+    { firstName: "Jane", lastName: "Doe", email: "jane.doe@example.com", message: "Hi there!" },
+    { firstName: "Alice", lastName: "Smith", email: "alice.smith@example.com", message: "How are you?" },
+    { firstName: "Bob", lastName: "Johnson", email: "bob.johnson@example.com", message: "Good morning!" },
+  ];
+
+  return (
+    <div className="App">
+      <h1>Table Example</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((row, index) => (
+            <tr key={index}>
+              <td>{row.firstName}</td>
+              <td>{row.lastName}</td>
+              <td>{row.email}</td>
+              <td>{row.message}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+export default App;
+And you can add some basic table styling in src/App.css:
+
+css
+Copy code
+.App {
+  text-align: center;
+  margin-top: 20px;
+}
+
+table {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+This will create a simple table with the specified columns: "First Name", "Last Name", "Email", and "Message". The data for the table is stored in a sample data array. Each object in the array represents a row in the table.
+
+Run the app to see the table:
+
+bash
+Copy code
+npm start
+Open your browser and navigate to http://localhost:3000/ to view your table.
