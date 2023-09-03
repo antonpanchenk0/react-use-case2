@@ -1,0 +1,67 @@
+Create readme.md file that will describe the installation and development process for reactJS application and laso have the description of application that allow to add some amount of people using the form and see the list of people in the table
+ChatGPT
+React People List Application
+This ReactJS application allows you to add people via a form and view the list of people in a table. The project utilizes React Hooks and other modern React features to manage state and render UI components.
+
+Features
+User-friendly form to add new people
+Table that dynamically updates to display the list of people
+Form validation
+Basic search functionality
+Prerequisites
+Before you begin, ensure you have met the following requirements:
+
+Node.js installed (v14.x.x or higher)
+npm installed (v6.x.x or higher)
+git installed (v2.x.x or higher)
+Installation
+Clone the repository
+
+bash
+Copy code
+git clone https://github.com/yourusername/react-people-list.git
+Navigate to the directory
+
+bash
+Copy code
+cd react-people-list
+Install dependencies
+
+bash
+Copy code
+npm install
+Running the Application
+Start the development server
+
+bash
+Copy code
+npm start
+Open http://localhost:3000 to view it in the browser.
+
+Development
+Here are some commands you can run to develop the application:
+
+npm start: Runs the app in the development mode
+npm test: Launches the test runner in the interactive watch mode
+npm run build: Builds the app for production to the build folder
+npm run eject: Ejects the application (note: this is a one-way operation)
+Directory Structure
+src/ - All of the source code
+components/ - React components
+App.js - Main application file
+index.js - Entry point for React
+public/ - Public assets and HTML
+package.json - Project dependencies and scripts
+README.md - Project documentation
+Contributing
+Fork the repository and create your branch from main.
+Make your changes.
+Run tests.
+Submit a pull request.
+License
+This project is licensed under the MIT License. See LICENSE for more details.
+
+Contact
+For more information, contact the author at youremail@example.com.
+
+Feel free to modify this README to better match your project's requirements and specifications.
