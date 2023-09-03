@@ -20,4 +20,10 @@ export const recordsReducer = (state = initialState, action) => {
   }
 }
 
+const recordsSelector = (state) => state.recordsReducer.records;
+
+export const selectors = {
+  recordsSelector,
+};
+
 export default recordsReducer;

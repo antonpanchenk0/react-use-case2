@@ -1,0 +1,123 @@
+Create form using ReactJS and validator library. The form should contain next fields and validations:
+- first name (required)
+- last name (required)
+- email (should be a correct email address)
+- message (should be at least 10 characters long)
+
+ChatGPT
+Certainly! Below is a sample code snippet demonstrating a simple form with the required fields and validations using ReactJS and the validator library.
+
+First, you'll need to install the validator library if you haven't:
+
+bash
+Copy code
+npm install validator
+Now, here's the React code:
+
+jsx
+Copy code
+import React, { useState } from 'react';
+import validator from 'validator';
+
+const MyForm = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: ''
+  });
+
+  const [formErrors, setFormErrors] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newErrors = validate(formData);
+    if (Object.keys(newErrors).length > 0) {
+      setFormErrors(newErrors);
+    } else {
+      console.log('Form is valid! Submitting...');
+      // Do whatever you want with the valid form data
+    }
+  };
+
+  const validate = (data) => {
+    const errors = {};
+    if (!data.firstName) errors.firstName = 'First name is required';
+    if (!data.lastName) errors.lastName = 'Last name is required';
+    if (!validator.isEmail(data.email)) errors.email = 'Invalid email address';
+    if (data.message.length < 10) errors.message = 'Message must be at least 10 characters long';
+
+    return errors;
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label>First Name</label>
+        <input
+          type="text"
+          name="firstName"
+          value={formData.firstName}
+          onChange={handleChange}
+        />
+        {formErrors.firstName && <span>{formErrors.firstName}</span>}
+      </div>
+
+      <div>
+        <label>Last Name</label>
+        <input
+          type="text"
+          name="lastName"
+          value={formData.lastName}
+          onChange={handleChange}
+        />
+        {formErrors.lastName && <span>{formErrors.lastName}</span>}
+      </div>
+
+      <div>
+        <label>Email</label>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+        {formErrors.email && <span>{formErrors.email}</span>}
+      </div>
+
+      <div>
+        <label>Message</label>
+        <textarea
+          name="message"
+          value={formData.message}
+          onChange={handleChange}
+        ></textarea>
+        {formErrors.message && <span>{formErrors.message}</span>}
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export default MyForm;
+This form contains:
+
+firstName which is required
+lastName which is required
+email which should be a valid email
+message which should be at least 10 characters long
+Upon clicking "Submit," the handleSubmit function will invoke the validate function to perform the validations, and if there are any errors, they will be displayed next to the respective fields.
