@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { useSelector } from 'react-redux';
-import DataTable from '../DataTable';  // adjust the import to your file structure
+import DataTable from '../DataTable';
 
 // Mock react-redux hooks
 jest.mock('react-redux', () => ({

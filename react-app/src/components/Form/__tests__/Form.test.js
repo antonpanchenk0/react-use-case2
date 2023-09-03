@@ -3,7 +3,7 @@ import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';  // for the "toBeInTheDocument" matcher
 import { useDispatch } from 'react-redux';
 import Form from '../Form';
-import * as constants from '../../../redux/constants';  // adjust the import to your file structure
+import * as constants from '../../../redux/constants';
 
 // Mocking the useDispatch hook from react-redux
 jest.mock('react-redux', () => ({
@@ -13,11 +13,14 @@ jest.mock('react-redux', () => ({
 
 describe('<Form />', () => {
   let dispatch;
+  global.alert = jest.fn();
 
   beforeEach(() => {
     // Set up a mock dispatch function
     dispatch = jest.fn();
     useDispatch.mockReturnValue(dispatch);
+    // Clear the mock window.alert
+    global.alert.mockClear();
   });
 
   test('renders correctly', () => {

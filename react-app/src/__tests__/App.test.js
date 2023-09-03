@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react';
 import App from '../App';
 import {useDispatch} from 'react-redux';
 
-jest.mock('./components/Form', () => () => <div>Form</div>);
-jest.mock('./components/DataTable', () => () => <div>DataTable</div>);
+jest.mock('../components/Form', () => () => <div>Form</div>);
+jest.mock('../components/DataTable', () => () => <div>DataTable</div>);
 
 // Mocking the useDispatch hook from react-redux
 jest.mock('react-redux', () => ({
