@@ -44,7 +44,7 @@ const Form = () => {
 
       setFormValidationErrors(errors);
     }
-  }, [formData]);
+  }, [formData, isFormDirty]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
